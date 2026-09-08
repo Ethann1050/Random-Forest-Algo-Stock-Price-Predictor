@@ -1,6 +1,5 @@
 import numpy as np
 import random
-import yfinance as yf
 import matplotlib.pyplot as plt
 import requests
 import os
@@ -21,15 +20,6 @@ minsamples=2
 maxdepth=5
 
 # WHEN API REQUESTS FAIL OR LIMIT IS REACHED code below will no longer work
-
-sp500 = yf.Ticker("^GSPC").history(period="1mo")
-opening_prices = sp500['Open'].values
-closing_prices = sp500['Close'].values
-sp500 = sp500.drop(columns=["Volume","High","Low"])
-sp500['Target']=sp500['Close'].shift(-1)
-sp500=sp500[:-1]
-result=sp500[['Open','Close','Target']].to_numpy()
-datasetog=np.round(result,decimals=2)
 
 
 
