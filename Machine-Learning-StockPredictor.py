@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import requests
 
 
-url='https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&apikey=QS8S66JLOPKE1LII'
+
 r=requests.get(url)
 data=r.json()
 
