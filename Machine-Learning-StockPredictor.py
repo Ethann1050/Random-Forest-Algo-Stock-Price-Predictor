@@ -3,6 +3,12 @@ import random
 import yfinance as yf
 import matplotlib.pyplot as plt
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+api_key = os.getenv("ALPHA_VANTAGE_API_KEY")
+url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SPY&apikey={api_key}'
 
 
 
